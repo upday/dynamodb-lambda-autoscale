@@ -1,14 +1,14 @@
 {
   "ReadCapacity": {
-    "Min": 1,
-    "Max": 100,
+    "Min": 500,
+    "Max": 4000,
     "Increment": {
       "When": {
         "UtilisationIsAbovePercent": 75,
         "ThrottledEventsPerMinuteIsAbove": 25
       },
       "By": {
-        "Units": 3,
+        "Units": 100,
         "ProvisionedPercent": 30,
         "ThrottledEventsWithMultiplier": 0.7
       },
@@ -29,15 +29,15 @@
     }
   },
   "WriteCapacity": {
-    "Min": 1,
-    "Max": 100,
+    "Min": 500,
+    "Max": 4000,
     "Increment": {
       "When": {
         "UtilisationIsAbovePercent": 75,
         "ThrottledEventsPerMinuteIsAbove": 25
       },
       "By": {
-        "Units": 3,
+        "Units": 100,
         "ProvisionedPercent": 30,
         "ThrottledEventsWithMultiplier": 0.7
       },
