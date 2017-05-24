@@ -16,19 +16,19 @@ export default class RateLimitedDecrement {
     invariant(adjustmentContext != null, 'Parameter \'adjustmentContext\' is not set');
     invariant(calcNewValueFunc != null, 'Parameter \'calcNewValueFunc\' is not set');
 
+    /*
     if (this.getNextAllowedDecrementDate(data, adjustmentContext) > this.getNowDate()) {
       // Disallow if we havent crossed one of four time barriers
       return false;
     }
+  */
 
     let adjustment = Math.abs(adjustmentContext.ProvisionedValue) -
       Math.abs(calcNewValueFunc(data));
 
     if (adjustmentContext.CapacityAdjustmentConfig != null &&
       adjustmentContext.CapacityAdjustmentConfig.When.UnitAdjustmentGreaterThan != null &&
-      adjustment <= adjustmentContext.CapacityAdjustmentConfig.When.UnitAdjustmentGreaterThan &&
-      this.getNowDate().valueOf() <
-      this.getLastAllowedDecrementDate().valueOf()) {
+      adjustment <= adjustmentContext.CapacityAdjustmentConfig.When.UnitAdjustmentGreaterThan) {
       // Disallow if the adjustment is very small.
       // However, if we have crossed the last time
       // barrier of the day then we might as well allow it.
@@ -43,9 +43,11 @@ export default class RateLimitedDecrement {
     adjustmentContext: AdjustmentContext) {
 
     // Check if we have already had all the decreases we are allowed today
+    /*
     if (data.ProvisionedThroughput.NumberOfDecreasesToday >= 4) {
       return this.getTomorrowDate();
     }
+    */
 
     // Get the last decrease or start of day
     let lastDecrease = this.parseDate(data.ProvisionedThroughput.LastDecreaseDateTime);
