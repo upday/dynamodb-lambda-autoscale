@@ -33,11 +33,12 @@
     "Max": 4000,
     "Increment": {
       "When": {
-        "ThrottledEventsPerMinuteIsAbove": 25
+        "ThrottledEventsPerMinuteIsAbove": 25,
+	"UtilisationIsAbovePercent": 80
       },
       "By": {
         "Units": 100,
-        "ProvisionedPercent": 30,
+        "ProvisionedPercent": 20,
         "ThrottledEventsWithMultiplier": 0.7
       }
     },
