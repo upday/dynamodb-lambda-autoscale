@@ -34,7 +34,8 @@
     "Increment": {
       "When": {
         "ThrottledEventsPerMinuteIsAbove": 25,
-	"UtilisationIsAbovePercent": 80
+	"UtilisationIsAbovePercent": 80,
+        "UnitAdjustmentGreaterThan": 100
       },
       "By": {
         "Units": 100,
@@ -46,10 +47,10 @@
       "When": {
         "UtilisationIsBelowPercent": 80,
         "AfterLastIncrementMinutes": 10,
-        "UnitAdjustmentGreaterThan": 100
+        "UnitAdjustmentGreaterThan": 200
       },
       "To": {
-        "ConsumedPercent": 100
+        "ConsumedPercent": 110
       }
     }
   }
