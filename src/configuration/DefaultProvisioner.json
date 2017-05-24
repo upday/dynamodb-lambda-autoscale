@@ -44,9 +44,9 @@
     },
     "Decrement": {
       "When": {
-        "UtilisationIsBelowPercent": 75,
-        "AfterLastIncrementMinutes": 30,
-        "UnitAdjustmentGreaterThan": 99
+        "UtilisationIsBelowPercent": 80,
+        "AfterLastIncrementMinutes": 10,
+        "UnitAdjustmentGreaterThan": 100
       },
       "To": {
         "ConsumedPercent": 100
